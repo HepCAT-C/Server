@@ -1,0 +1,23 @@
+<div class="container">
+    <h2 class="text-center">Admin Login</h2>
+    <br>
+    <br>
+    <form>
+        <div class="form-group">
+            <label for="user">User Name</label>
+            <br>
+            <input type="text" class="form-control" id="user" ng-model="person.userName" placeholder="Enter User Name">
+            <br>
+            <br>
+            <label for="pwd"> Password </label>
+            <br>
+            <input type="password" class="form-control" ng-model="person.password" id="pwd" placeholder="Password"></input>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary" ng-click="onSignIn(person.userName)">Sign In</button>
+            <span>&nbsp;&nbsp;&nbsp;</span>
+            <button type="submit" class="btn btn-primary" ng-click="register()">Register</button>
+            <p>{{message}}</p>
+        </div>
+    </form>
+</div>

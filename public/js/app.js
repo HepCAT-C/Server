@@ -3,46 +3,42 @@ var mainApp = angular.module("mainApp", ['ngRoute','mainApp.controller']);
 mainApp.config(function($routeProvider) {
     $routeProvider
         .when('/signIn', {
-            templateUrl: 'AdminLogin.html',
+            templateUrl: 'templates/AdminLogin.html',
             controller: 'AdminController'
         })		
 	    .when('/home',{
-			templateUrl : 'RegisterAdminOrPatient.html',
+			templateUrl : 'templates/RegisterAdminOrPatient.html',
 			controller: 'AdminPatientRegContrller'
 		})
 		.when('/patientRegister',{
-			templateUrl : 'PatientRegistration.html',
+			templateUrl : 'templates/PatientRegistration.html',
 			controller: 'PatientController'
 		})
 		.when('/doctorRegister',{
-			templateUrl : 'DoctorRegistration.html',
+			templateUrl : 'templates/DoctorRegistration.html',
 			controller : 'DoctorController'
 		})
 		.when('/adminRegister',{
-			templateUrl: 'AdminRegistration.html',
+			templateUrl: 'templates/AdminRegistration.html',
 			controller: 'AdminRegController'
 		})
 		.when('/viewExistingPatients',{
-			templateUrl : 'ViewPatients.html',
+			templateUrl : 'templates/ViewPatients.html',
 			controller : 'ViewPatientsController'
 		})
 		.when('/viewExistingAdmins',{
-			templateUrl : 'ViewAdmin.html',
+			templateUrl : 'templates/ViewAdmin.html',
 			controller : 'ViewAdminController'
 		})
 		.when('/viewExistingDoctors',{
-			templateUrl : 'ViewDoctors.html',
+			templateUrl : 'templates/ViewDoctors.html',
 			controller : 'ViewDoctorsController'
 		})
 		.when('/bookGroupAppointment',{
-			templateUrl : 'BookGroupAppointment.html',
+			templateUrl : 'templates/BookGroupAppointment.html',
 			controller : 'BookGrpAppntController'
 		})
         .otherwise({
             redirectTo: '/signIn'
         });
 });
-
-
-
-

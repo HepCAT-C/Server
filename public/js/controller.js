@@ -1,6 +1,7 @@
-angular.module('mainApp.controller',[])
 
-.controller('AdminController',['$scope','$http','$location'],function($scope,$http,$location){
+angular.module('mainApp.controller',[])
+.controller('AdminController',['$scope','$http','$location',function($scope,$http,$location){
+	
 	
 	console.log("Hello World from Controller");
 
@@ -29,9 +30,9 @@ angular.module('mainApp.controller',[])
 		$location.path('/adminRegister');
 	}
 
-})
+}])
 
-.controller('AdminRegController',['$scope','$http','$location'], function($scope, $http,$location){
+.controller('AdminRegController',['$scope','$http','$location', function($scope, $http,$location){
 		
 		$scope.onSubmit = function(){
 			console.log("Entered on submit ");
@@ -67,9 +68,9 @@ angular.module('mainApp.controller',[])
 			});
 		};
 		
-})
+}])
 
-.controller('AdminPatientRegContrller',['$scope','$http','$location'],function($scope,$http,$location){
+.controller('AdminPatientRegContrller',['$scope','$http','$location',function($scope,$http,$location){
 
 		$scope.registerNewAdmin = function(){
 			console.log("Entered New Admin Reg function ");
@@ -99,9 +100,9 @@ angular.module('mainApp.controller',[])
 			console.log("Entered View Existing Doctors");
 			$location.path('/viewExistingDoctors');
 		};
-})
+}])
 
-.controller('PatientController',['$scope','$http'], function mySuccess($scope, $http){
+.controller('PatientController',['$scope','$http', function mySuccess($scope, $http){
 			
 			$scope.onSubmit = function(){
 				console.log('Entered Patient submit');
@@ -125,7 +126,7 @@ angular.module('mainApp.controller',[])
 						$scope.message = "";
 				});
 			};		
-})
+}])
 
 .controller('DoctorController', function($scope, $http){
 			

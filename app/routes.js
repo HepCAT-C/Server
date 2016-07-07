@@ -30,6 +30,7 @@ module.exports = function(app) {
     app.post('/adminReg', function(req, res) {
         console.log("Inserted");
         console.log(req.body);
+
         adminDB.adminReg.insert(req.body, function(err, docs) {
             console.log("in server " + docs);
             res.json(docs);
@@ -40,9 +41,20 @@ module.exports = function(app) {
     app.post('/patientReg', function(req, res) {
         console.log("Inserted Patient");
         console.log(req.body);
+        // added for appointment booking service
+        // req.body.firstappointmentbooked="no";
+        // req.body.secondappointmentbooked ="no";
+        // req.body.thirdappointmentbooked = "no";
+        // req.body.firstappointmentdate="";
+        // req.body.secondappointmentdate="";
+        // req.body.thirdappointmentdate="";
+        req.body.appointments=[];
+        console.log(req.body);
+        console.log("appointment count"+req.body.appointmentcount);
         patientDB.patientReg.insert(req.body, function(err, docs) {
-            console.log("Inserting in DB " + docs);
+            console.log(docs, err);
             res.json(docs);
+            // console.log(docs)
         });
     });
 
@@ -308,13 +320,24 @@ var data = req.body;
 
     });
 
+
+    // added for booking appointments
+    app.get('/getPatients',function(req, res) {
+        console.log("Received patient get requrest.");
+        patientDB.patientReg.find(function(err, docs) {
+            console.log("res from server" + docs);
+            res.json(docs);
+        });
+    });
+
     // route to handle creating goes here (app.post)
     // route to handle delete goes here (app.delete)
 
     // frontend routes =========================================================
     // route to handle all angular requests
     app.get('*', function(req, res) {
-        res.sendFile(__dirname + '/public/index.html'); // load our public/index.html file
+        console.log(__dirname + '/../public/index.html');
+        res.sendFile(__dirname + '/../public/index.html'); // load our public/index.html file
     });
 
 };

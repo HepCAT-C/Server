@@ -1,0 +1,37 @@
+<div class="container">
+    <form class="form-inline">
+        <div class="form-group">
+            <h3 class="text-center">Doctor Registration</h3>
+            <!-- <span><a href="#/home">Back<<</a></span><br><br> -->
+            <br>
+            <label for="firstName">First Name: </label>
+            <br>
+            <input type="text" class="form-control" ng-model="doctor.fName" id="firstName" ng-blur="checkNameInDb(doctor.fName)" placeholder="Enter Doctor's First Name">
+            <br>
+            <br>
+            <label for="lastName">Last Name: </label>
+            <br>
+            <input type="text" class="form-control" ng-model="doctor.lName" id="lastName" placeholder="Enter Doctor's Last Name">
+            <br>
+            <br>
+            <label for="contact">Contact: </label>
+            <br>
+            <input type="text" class="form-control" ng-model="doctor.cnct" id="contact" placeholder="Enter Doctor's Phone Number">
+            <br>
+            <br>
+            <label for="address1">Address1: </label>
+            <br>
+            <input type="text" class="form-control" ng-model="doctor.addr1" id="address1" placeholder="Enter Doctor's Address1">
+            <br>
+            <br>
+            <label for="address2">Address2: </label>
+            <br>
+            <input type="text" class="form-control" ng-model="doctor.addr2" id="address2" placeholder="Enter Doctor's Address2">
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary" ng-click="onSubmit()">Submit</button>
+            <br>
+            <p>{{message}}</p>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>View Existing Doctors</h2>
+    <!-- <span><a href="#/home">Back<<</a></span><br><br> -->
+    <table class="table">
+        <thead>
+            <th>First Name</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <!-- 					<th>Edit</th>
+					<th>Delete</th> -->
+        </thead>
+        <tbody ng-repeat="doctor in doctorList">
+            <td>{{doctor.fName}}</td>
+            <td>{{doctor.cnct}}</td>
+            <td>{{doctor.addr1}}</td>
+            <td>
+                <button type="button">Add Timings</button>
+            </td>
+            <td>
+                <button type="submit" ng-click="onEdit(doctor.fName)">Edit</button>
+            </td>
+            <td>
+                <button type="submit" ng-click="onDelete(doctor.fName)">Delete</button>
+            </td>
+        </tbody>
+    </table>
+</div>
