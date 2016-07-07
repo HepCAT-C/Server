@@ -1,0 +1,31 @@
+<div class="container">
+    <p>
+        <h3>Existing Admins</h3></p>
+    <!-- <a href="#/home">Back<<</a> -->
+    <p> Search Criteria </p>
+    <p></p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Sex</th>
+                <th>Contact</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="admin in adminList">
+                <td>{{admin.fName}}</td>
+                <td>{{admin.lName}}</td>
+                <td>{{admin.genderVal}}</td>
+                <td>{{admin.cnct}}</td>
+                <td>
+                    <button type="submit" ng-click="onEdit(admin.fName)">Edit</td>
+                <td>
+                    <button type="submit" ng-click="onDelete(admin.fName)">Delete</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

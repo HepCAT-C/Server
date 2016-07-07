@@ -1,0 +1,35 @@
+<div class="container">
+    <h3 class="text-center">Admin Registration</h3><span>
+			<!-- <a href="/index.html">Back<<</a></span>
+    <br>
+    <br> -->
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <br>
+            <p>
+                <input type="text" class="form-control" id="firstName" ng-model="admin.fName" ng-blur="checkNameInDb(admin.fName)" placeholder="Enter Admin's first Name"><span>{{userExists}}</span></p>
+            <br>
+            <label for="lastName">Last Name</label>
+            <br>
+            <input type="text" class="form-control" id="lastName" ng-model="admin.lName" placeholder="Enter Admin's Last Name">
+            <br>
+            <br>
+            <label for="gender"> Sex </label>
+            <br>
+            <select ng-model="admin.genderVal" id="gender">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+            <br>
+            <br>
+            <label for="contact"> Contact </label>
+            <br>
+            <input type="text" class="form-control" id="contact" ng-model="admin.cnct" placeholder="Enter Contact Number">
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary" ng-click="onSubmit()">Submit</button>
+            <p>{{message}}</p>
+        </div>
+    </form>
+</div>
